@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui" xmlns:jsp="http://java.sun.com/jsf/composite">
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+    <h:head />
+
+<!-- The easiest way I could find to format the table with the code we worked on was using two managed beans, one for each list of information, and using CSS to create the appearance of one table.-->
+    <h:body>
+        <h1>Existing Records</h1>
+        <h:panelGrid columns="2" width="70%" class="mongoDataWrap">
+        <p:dataTable var="records" value="#{record.records}" class="mongoData">
+            <p:column class="mongoHeader" headerText="Names">
+                <h:outputText value="#{records}" />
+            </p:column>
+        </p:dataTable>
+        <p:dataTable var ="hashRecords" value="#{hashRecord.hashRecords}" class ="mongoData">
+            <p:column class="mongoHeader" headerText="Hashed SSNs">
+                    <h:outputText value="#{hashRecords}" />
+            </p:column>
+        </p:dataTable></h:panelGrid>
+  </h:body>
+</link>
+</html>

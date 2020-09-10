@@ -1,0 +1,54 @@
+/*I matched the pages to the existing Primefaces components; the buttons, the table header, etc.*/
+
+body {
+    background-color: #58575d;
+    font-family: Arial, Helvetica, sans-serif;
+    color: lightskyblue;
+
+}
+
+.mongoHeader {
+    background-color: #7b7982 !important;
+    color: #2e2e31;
+    border: none !important;
+    display: flex;
+    child-align: left !important;
+    text-align: left;
+    padding: 10px;
+}
+
+
+.indexContent {
+    background-color: #6d6b73;
+    padding: 15px;
+    display: flex;
+    child-align: right;
+    width: 34%;
+    border: 2px solid #bab7c4;
+}
+
+.mongoData{
+    background-color: none;
+    border:3px #bab7c4; !important;
+    padding:7px;
+    display: flex;
+    z-index: 1;
+    margin-inside: -2px !important;
+    margin-left: 0px;
+    margin-right: -30px;
+}
+
+
+table, td, tr {
+    border: none;
+    background-color: none !important;
+    padding: none !important;
+}
+
+
+h1 {
+    text-indent: 13%;
+}
+h2 {
+    text-indent: 5%;
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+    <h:head/>
+    <h:body>
+        <h2>Personal Information</h2>
+
+        <!-- First, wrapper to create box on page.  Then inputs and buttons for SSN and Name.-->
+        <div class="indexContent">
+        <h:form>
+            <h:panelGrid columns="2" cellpadding="5">
+                <p:outputLabel for="name" value="Name:"/>
+                <p:inputText id="name" value="#{buttonView.name}"/>
+
+                <p:outputLabel for="ssn" value="SSN:"/>
+                <p:inputMask id="ssn" value="#{buttonView.ssn}" mask="999-99-9999"/>
+            </h:panelGrid>
+
+
+            <h:panelGrid columns="3" cellpadding="5">
+                <p:commandButton value="Save" action="#{buttonView.save}" update="displayS"
+                                 oncomplete="PF('save').show()"/>
+
+                <p:commandButton value="Update" action="#{buttonView.update}" update="displayU"
+                                 oncomplete="PF('update').show()"/>
+
+                <p:commandButton value="Delete" action="#{buttonView.delete}" update="displayD"
+                                 oncomplete="PF('delete').show()"/>
+
+            </h:panelGrid>
+            <br/><br/>
+
+<!-- These are the pop-ups for each button (except Database) -->
+
+            <p:dialog widgetVar="save" modal="true" resizable="false" header="Saved to Database:" showEffect="fade">
+                <p:panelGrid id="displayS" columns="2" columnClasses="label,value">
+
+                    <h:outputText value="SSN: "/>
+                    <h:outputText value="#{buttonView.ssn}"/>
+
+                    <h:outputText value="Name: "/>
+                    <h:outputText value="#{buttonView.name}"/>
+                </p:panelGrid>
+            </p:dialog>
+
+            <p:dialog widgetVar="update" modal="true" resizable="false" header="Updated Name:" showEffect="fade">
+                <p:panelGrid id="displayU" columns="2" columnClasses="label,value">
+
+                    <h:outputText value="SSN: "/>
+                    <h:outputText value="#{buttonView.ssn}"/>
+
+                    <h:outputText value="Name: "/>
+                    <h:outputText value="#{buttonView.name}"/>
+                </p:panelGrid>
+            </p:dialog>
+
+            <p:dialog widgetVar="delete" modal="true" resizable="false" header="Deleted Record:" showEffect="fade">
+                <p:panelGrid id="displayD" columns="2" columnClasses="label,value">
+
+                    <h:outputText value="SSN: "/>
+                    <h:outputText value="#{buttonView.ssn}"/>
+
+                    <h:outputText value="Name: "/>
+                    <h:outputText value="#{buttonView.name}"/>
+                </p:panelGrid>
+            </p:dialog>
+
+        </h:form> <br/><br/>
+
+            <!-- Here's the database button, and close of everything. -->
+
+        <h:form>
+            <p:linkButton outcome="tablePage" value="See Database" style="margin-right:20px;"
+                          target="_blank"> </p:linkButton>
+
+
+        </h:form>
+        </div>
+    </h:body>
+</link>
+</html>
