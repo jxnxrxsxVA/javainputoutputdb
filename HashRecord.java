@@ -1,9 +1,7 @@
 //Janissa Hamilton
 //11/24/2019
-//CSC 202
-//I used my own code which had the benefit of resources provided previously for other projects
+//I used my own code which had the benefit of resources provided previously for other projects in classes.
 //Also the Primefaces examples (primefaces.org/showcase.)
-//Thank you so much for helping me re-organize and fix my code! (and extending the due date)
 //I used this for WELD errors I had -- https://stackoverflow.com/questions/48410451/why-do-i-need-a-no-args-constructor-to-use-applicationscoped-beans-with-construc
 
 
